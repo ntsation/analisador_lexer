@@ -6,13 +6,15 @@ patterns = [
     (r'[\+\-\*/=<>]', 'OPERATOR'),  # Operadores
     (r'[(),;{}]', 'SYMBOL'),  # Símbolos
     (r'\d+', 'NUMBER'),  # Números
-    (r'"(?:\\.|[^"\\])*"', 'STRING'), # Strings
+    (r'"(?:\\.|[^"\\])*"', 'STRING'),  # Strings
     (r'//.*', ''),  # Comentários de linha
-    (r'/\*[\s\S]*?\*/', ''), # Comentários de bloco
+    (r'/\*[\s\S]*?\*/', ''),  # Comentários de bloco
     (r'\s+', ''),  # Espaços em branco
 ]
 
 # Exemplo de código
+
+
 def lexer(code):
     tokens = []
     while code:
@@ -27,6 +29,7 @@ def lexer(code):
         else:
             raise ValueError("Caractere inesperado: {}".format(code[0]))
     return tokens
+
 
 # Teste
 code = """
